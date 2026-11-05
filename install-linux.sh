@@ -53,14 +53,14 @@ check_dependencies() {
     fi
 }
 
-check_framework_tool() {
-    if ! command -v framework_tool >/dev/null 2>&1; then
-        warn "framework_tool not found on PATH"
+check_framework-tool() {
+    if ! command -v framework-tool >/dev/null 2>&1; then
+        warn "framework-tool not found on PATH"
         warn "The service will attempt to download it automatically on first run"
         warn "Or install it manually from: https://github.com/FrameworkComputer/framework-system"
         echo "" >&2
     else
-        info "framework_tool found: $(command -v framework_tool)"
+        info "framework-tool found: $(command -v framework-tool)"
     fi
 }
 
@@ -257,7 +257,7 @@ main() {
 
     check_root
     check_dependencies
-    check_framework_tool
+    check_framework-tool
 
     local tmpdir
     tmpdir=$(download_release)
